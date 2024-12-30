@@ -1,4 +1,4 @@
-import {BasePart, CPU, Motherboard, Memory, Case, Build, Part} from "./classes.ts"
+import {BasePart, CPU, Motherboard, Memory, Case, Part} from "./classes.ts"
 import { Preformat, CPUPreformat, MemoryPreformat, MotherboardPreformat, CasePreformat} from "./preformatTypes.ts"
 
 
@@ -51,7 +51,8 @@ export function object_to_part(data: Preformat) : Part {
     }
     return {partType: "ha ha ha ", name: "ha ha ha "} as BasePart
 }
-// have to do this for typescript typing system to work
+
+// type guards for typescript typing system to work
 function isCPU(data : Preformat) : data is CPUPreformat { return data.partType == "CPU" }  
 function isMemory(data : Preformat) : data is MemoryPreformat { return data.partType == "Memory" }  
 function isMotherboard(data : Preformat) : data is MotherboardPreformat { return data.partType == "Motherboard" }  

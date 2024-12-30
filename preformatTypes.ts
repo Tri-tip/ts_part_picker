@@ -1,3 +1,5 @@
+// types to interpolate raw data from pypartpicker into data; converted to internal types later
+
 export interface CPUPreformat {
     "Core Count": string,
     "Core Family": string,

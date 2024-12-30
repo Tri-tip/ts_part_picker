@@ -19,6 +19,9 @@ export class DBClient extends pg.Client {
         const entry : DBEntry = data_constructor(part)
         await this.query(`INSERT INTO ${"Parts"} VALUES ($1, $2, $3, $4)`, [entry.name, entry.partType, entry.id, JSON.stringify(entry.specs)])
     }
+    async removePart(part: string) {
+        await this.query(`DELETE FROM ${"Parts"} WHERE name = $1`, [part])
+    }
 }
 
 // helper to parse data for insertion to db

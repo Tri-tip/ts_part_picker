@@ -1,7 +1,13 @@
+export enum Currency {
+    USD,
+    EUR, 
+    GBP
+}
+
 export interface PricingData {
     url: string
     price: number
-    currency: string
+    currency: Currency
     supplier: string
 }
 
